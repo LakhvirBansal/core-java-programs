@@ -1,50 +1,39 @@
 package LinkedList;
 
-public class DeleteNode {
+
+public class SearchElementInLinkedList {
 
 	Node head;
 
 	public static void main(String[] args) {
 
-		DeleteNode llist = new DeleteNode();
+		SearchElementInLinkedList llist = new SearchElementInLinkedList();
 		llist.push(7);
 		llist.push(5);
 		llist.push(3);
 		llist.push(1);
 
 		llist.printList();
-
-		llist.deleteNode(7);
-
-		System.out.println("after deletion");
-		llist.printList();
+		int length = llist.getLength();
+		System.out.println("linkedList length :" + length);
 	}
 
-	private void deleteNode(int i) {
 
+	private int getLength() {
+
+		int count = 0;
 		if (head == null) {
-			System.out.println("linked list is empty");
-			return;
+			return count;
 		}
 
-		if (head != null && head.data == i) {
+		while (head != null) {
+			count++;
 			head = head.next;
-			return;
 		}
-		
-		Node curNode = head.next;
-		Node prev = head;
-		while (curNode.next != null && curNode.data != i) {
-				prev = curNode;
-				curNode = curNode.next;
-		}
-		
-		if (curNode == null)
-			return;
 
-		prev.next = curNode.next;
-
+		return count;
 	}
+
 
 	private void printList() {
 

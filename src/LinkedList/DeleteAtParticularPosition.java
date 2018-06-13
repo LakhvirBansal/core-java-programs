@@ -5,16 +5,6 @@ public class DeleteAtParticularPosition {
 
 	Node head;
 
-	class Node {
-		int data;
-		Node next;
-
-		Node(int val) {
-			data = val;
-			next = null;
-		}
-	}
-
 	public static void main(String[] args) {
 
 		DeleteAtParticularPosition llist = new DeleteAtParticularPosition();
@@ -47,6 +37,10 @@ public class DeleteAtParticularPosition {
 			prev = curNode;
 			curNode = curNode.next;
 			count++;
+		}
+
+		if (curNode.next == null) {
+			return;
 		}
 
 		prev.next = curNode.next;
