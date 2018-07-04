@@ -8,30 +8,37 @@ public class SearchElementInLinkedList {
 	public static void main(String[] args) {
 
 		SearchElementInLinkedList llist = new SearchElementInLinkedList();
-		llist.push(7);
-		llist.push(5);
-		llist.push(3);
+		llist.push(14);
+		llist.push(30);
+		llist.push(10);
 		llist.push(1);
 
 		llist.printList();
-		int length = llist.getLength();
-		System.out.println("linkedList length :" + length);
+		int val = llist.searchElementAtParPosition(2);
+
+		if (val == -1)
+			System.out.println("wrong Index");
+		else
+			System.out.println("val is :" + val);
 	}
 
+	private int searchElementAtParPosition(int i) {
 
-	private int getLength() {
-
-		int count = 0;
 		if (head == null) {
-			return count;
+			return -1;
 		}
 
-		while (head != null) {
+		int count = 0;
+
+		while (count < i && head != null) {
 			count++;
 			head = head.next;
 		}
 
-		return count;
+		if (head != null) {
+			return head.data;
+		}
+		return -1;
 	}
 
 
