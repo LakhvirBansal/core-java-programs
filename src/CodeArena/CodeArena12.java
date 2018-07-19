@@ -1,4 +1,4 @@
-package StringPrograms;
+package CodeArena;
 
 import java.util.HashMap;
 import java.util.Map;
