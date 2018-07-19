@@ -1,4 +1,4 @@
-package StringPrograms;
+package BinaryTree;
 
 class Node{
 	int key;

@@ -1,4 +1,4 @@
-package StringPrograms;
+package BinaryTree;
 
 public class InsertDeleteBST {
 
