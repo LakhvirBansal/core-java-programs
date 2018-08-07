@@ -8,6 +8,7 @@ class Student {
 
 	int rollNo;
 	String name, address;
+	int timeTaken;
 
 	public Student(int rollno, String name, String address) {
 		this.rollNo = rollno;
@@ -15,10 +16,47 @@ class Student {
 		this.address = address;
 	}
 
+	public Student(String name, int time) {
+		this.name = name;
+		this.timeTaken = time;
+	}
 	// Used to print student details in main()
 	public String toString() {
 		return this.rollNo + " " + this.name + " " + this.address;
 	}
+
+	public int getRollNo() {
+		return rollNo;
+	}
+
+	public void setRollNo(int rollNo) {
+		this.rollNo = rollNo;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public int getTimeTaken() {
+		return timeTaken;
+	}
+
+	public void setTimeTaken(int timeTaken) {
+		this.timeTaken = timeTaken;
+	}
+
 }
 
 class SortByRoll implements Comparator<Student> {
