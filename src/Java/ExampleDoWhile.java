@@ -3,10 +3,14 @@ package Java;
 public class ExampleDoWhile {
 
 	public static void main(String[] args) {
-		do
+	/*	do
 			while (true)
 				System.out.println("hello");
-		while (true);
+		while (true);*/
+
+		do
+			System.out.println("dsvnv");
+		while(true);
 
 	}
 }
