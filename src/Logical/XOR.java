@@ -11,5 +11,7 @@ public class XOR {
 	public static void main(String[] args) {
 		int x = 64, y = 128, z = 256;
 		System.out.println("XOR is " + (myXOR(x, y)));
+
+		System.out.println(1.0 / 0.0);
 	}
 }
