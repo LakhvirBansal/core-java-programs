@@ -1,13 +1,13 @@
 package LinkedList;
 
 
-public class CountParticularElementINLinkedList {
+public class GetMiddleElementFromLinkedList {
 
 	Node head;
 
 	public static void main(String[] args) {
 
-		CountParticularElementINLinkedList llist = new CountParticularElementINLinkedList();
+		GetMiddleElementFromLinkedList llist = new GetMiddleElementFromLinkedList();
 		llist.push(14);
 		llist.push(30);
 		llist.push(10);

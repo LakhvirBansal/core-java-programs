@@ -43,7 +43,9 @@ public class BinarySearchTree {
     void inorder()  {
        inorderRec(root);
     }
-    private void preOrder() {
+    
+    @SuppressWarnings("unused")
+	private void preOrder() {
     	 preOrderRec(root);
 		
 	}

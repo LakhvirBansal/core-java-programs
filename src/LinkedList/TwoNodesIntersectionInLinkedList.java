@@ -15,38 +15,40 @@ public class TwoNodesIntersectionInLinkedList {
 		llist.push(2);
 		llist.push(1);
 		llist.printList();
-
+		
 		TwoNodesIntersectionInLinkedList llist2 = new TwoNodesIntersectionInLinkedList();
+		llist2.push(4);
 		llist2.push(3);
 		llist2.push(2);
-		llist2.push(1);
 		llist2.printList();
-		// head -1->2->3->4->5- null
-
-		/*
-		 * llist.moveLastElementToFirst(); System.out.println("After move last element to first :"); llist.printList();
-		 */
-		// head -> 5 -1- 2- 3 -4 - null
+		
+		TwoNodesIntersectionInLinkedList returnList = getIntersectionOfTwoLists(llist.head, llist2.head); 
+		returnList.printList();
 	}
 
 
 
-	private void moveLastElementToFirst() {
-
-		Node temp = head;
-		Node lastNode = temp;
-		Node prevNode = null;
-		while (temp.next != null) {
-			lastNode = temp.next;
-			prevNode = temp;
-			temp = temp.next;
+	private static TwoNodesIntersectionInLinkedList getIntersectionOfTwoLists(Node head1,
+			Node head2) {
+		// TODO Auto-generated method stub
+		TwoNodesIntersectionInLinkedList returnList  = new TwoNodesIntersectionInLinkedList();
+		
+		while(head1 != null && head2 != null) {
+			if(head1.data == head2.data) {
+				returnList.push(head1.data);
+				head1 = head1.next;
+				head2 = head2.next;
+			} else {
+				if(head1.data < head2.data) {
+					head1 = head1.next;
+				} else {
+					head2 = head2.next;
+				}
+			}
 		}
-
-		prevNode.next = null;
-		lastNode.next = head;
-		head = lastNode;
-
+		return returnList;
 	}
+
 
 	void printList() {
 		Node temp = head;

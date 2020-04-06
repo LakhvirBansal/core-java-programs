@@ -8,7 +8,7 @@ public class ValidateRegex {
 	public static void main(String[] args) {
 		Pattern pattern;
 		Matcher matcher;
-		final String NAME_PATTERN = "abc[";
+		final String NAME_PATTERN = "abc";
 		
 		pattern = Pattern.compile(NAME_PATTERN);
 		matcher = pattern.matcher("bcd");

@@ -1,18 +1,12 @@
 package BinaryTree;
 
-class Node1 {
-    int data;
-    Node1 left, right;
-    public Node1(int item)
-    {
-        data = item;
-        left = right = null;
-    }
-}
+import java.util.LinkedList;
+import java.util.Queue;
+
 
 public class LevelOrderTreeTraversal {
 
-	Node1 root;
+	Node root;
 	
 	public LevelOrderTreeTraversal()
     {
@@ -27,7 +21,7 @@ public class LevelOrderTreeTraversal {
             printGivenLevel(root, i);
     }
     
-    int height(Node1 root)
+    int height(Node root)
     {
         if (root == null)
            return 0;
@@ -44,7 +38,7 @@ public class LevelOrderTreeTraversal {
         }
     }
     
-    void printGivenLevel (Node1 root ,int level)
+    void printGivenLevel (Node root ,int level)
     {
         if (root == null)
             return;
@@ -56,16 +50,46 @@ public class LevelOrderTreeTraversal {
             printGivenLevel(root.right, level-1);
         }
     }
+    
+    
 	 public static void main(String args[]) {
 		 LevelOrderTreeTraversal tree = new LevelOrderTreeTraversal();
-	       tree.root= new Node1(1);
-	       tree.root.left= new Node1(2);
-	       tree.root.right= new Node1(3);
-	       tree.root.left.left= new Node1(4);
-	       tree.root.left.right= new Node1(5);
+	       tree.root= new Node(1);
+	       tree.root.left= new Node(2);
+	       tree.root.right= new Node(3);
+	       tree.root.left.left= new Node(4);
+	       tree.root.left.right= new Node(5);
 	        
 	       System.out.println("Level order traversal of binary tree is ");
-	       tree.printLevelOrder();
+	       //tree.printLevelOrder();
+	       tree.printLevelOrderUsingQueue();
+	       
 	    }
+
+	private void printLevelOrderUsingQueue() {
+		if(root == null) {
+			return;
+		}
+		
+		Queue<Node> queue = new LinkedList<Node>();
+		queue.offer(root);
+		
+		while(!queue.isEmpty()) {
+			Node temp = queue.poll();
+			
+			System.out.print(temp.data+" ");
+			
+			if(temp.left != null) {
+				queue.add(temp.left);
+			}
+			
+			if(temp.right != null) {
+				queue.add(temp.right);
+			}
+		}
+		
+		
+		
+	}
 
 }

@@ -1,19 +1,6 @@
 package BinaryTree;
 
-class Node{
-	int key;
-	Node left, right;
-	
-	Node(int val){
-		key = val;
-		left = right = null;
-	}
-}
-
 public class BinaryTreeIsBST {
-
-
-	
 	Node root;
 	
 	private boolean isBST() {
@@ -25,14 +12,14 @@ public class BinaryTreeIsBST {
 			return true;
 		}
 		
-		 if (root.key < min || root.key > max)
+		 if (root.data < min || root.data > max)
 	            return false;
 	 
 	        /* otherwise check the subtrees recursively
 	        tightening the min/max constraints */
 	        // Allow only distinct values
-	        return (isBSTUtil(root.left, min, root.key-1) &&
-	                isBSTUtil(root.right, root.key+1, max));
+	        return (isBSTUtil(root.left, min, root.data-1) &&
+	                isBSTUtil(root.right, root.data+1, max));
 	}
 
 	public static void main(String[] args) {

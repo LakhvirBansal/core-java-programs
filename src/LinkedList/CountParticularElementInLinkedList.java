@@ -1,13 +1,13 @@
 package LinkedList;
 
 
-public class GetMiddleElementOfLinkedList {
+public class CountParticularElementInLinkedList {
 
 	Node head;
 
 	public static void main(String[] args) {
 
-		GetMiddleElementOfLinkedList llist = new GetMiddleElementOfLinkedList();
+		CountParticularElementInLinkedList llist = new CountParticularElementInLinkedList();
 		llist.push(1);
 		llist.push(2);
 		llist.push(1);
@@ -16,7 +16,7 @@ public class GetMiddleElementOfLinkedList {
 
 		// head -> 1-3-1-2-1-null
 		llist.printList();
-		int val = llist.countParNumber(8);
+		int val = llist.countParNumber(1);
 
 		if (val == -1)
 			System.out.println("linked list is empty");

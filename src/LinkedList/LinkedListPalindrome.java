@@ -13,7 +13,7 @@ public class LinkedListPalindrome {
 		llist.push(2);
 		llist.push(3);
 		llist.push(2);
-		llist.push(4);
+		llist.push(1);
 		// head 1 - 2 - 3 - 2- 1 - null
 
 		boolean isPalindrome = llist.checkPalindrome();

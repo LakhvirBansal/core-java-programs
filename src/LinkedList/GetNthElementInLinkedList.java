@@ -4,36 +4,43 @@ package LinkedList;
 public class GetNthElementInLinkedList {
 
 	Node head;
-
+	
 	public static void main(String[] args) {
 
 		GetNthElementInLinkedList llist = new GetNthElementInLinkedList();
-		llist.push(7);
-		llist.push(5);
-		llist.push(3);
+		llist.push(14);
+		llist.push(30);
+		llist.push(10);
 		llist.push(1);
 
 		llist.printList();
-		boolean isPresent = llist.searchElement(1);
+		int val = llist.searchElementAtParPosition(2);
 
-		System.out.println("Element present :" + isPresent);
+		if (val == -1)
+			System.out.println("wrong Index");
+		else
+			System.out.println("val is :" + val);
 	}
 
-	private boolean searchElement(int i) {
+	private int searchElementAtParPosition(int i) {
 
 		if (head == null) {
-			return false;
+			return -1;
 		}
 
-		while (head != null && head.data != i) {
+		int count = 0;
+
+		while (count < i && head != null) {
+			count++;
 			head = head.next;
 		}
 
-		if (head == null) {
-			return false;
+		if (head != null) {
+			return head.data;
 		}
-		return true;
+		return -1;
 	}
+
 
 	private void printList() {
 
@@ -58,4 +65,5 @@ public class GetNthElementInLinkedList {
 		newNode.next = head;
 		head = newNode;
 	}
+	
 }

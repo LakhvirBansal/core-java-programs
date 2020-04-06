@@ -32,14 +32,6 @@ public class MiddleElement {
 			int finalArrLength = finalArr.length;
 			int sum = finalArr[finalArrLength/2 -1] + finalArr[finalArrLength/2];
 			System.out.println(sum);
-		/*	for (int j = 0; j < secondArr.length; j++) {
-				System.out.println(secondArr[j]);
-				
-			}
-			for (int j = 0; j < firstArr.length; j++) {
-				System.out.println(firstArr[j]);
-				
-			}*/
 		}
 	}
 }

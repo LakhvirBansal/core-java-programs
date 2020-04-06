@@ -2,19 +2,7 @@ package BinaryTree;
 
 public class DeleteNodeBST {
 
-	class Node
-    {
-        int key;
-        Node left, right;
- 
-        public Node(int item)
-        {
-            key = item;
-            left = right = null;
-        }
-    }
- 
-    // Root of BST
+     // Root of BST
     Node root;
  
     // Constructor
@@ -36,9 +24,9 @@ public class DeleteNodeBST {
         if (root == null)  return root;
  
         /* Otherwise, recur down the tree */
-        if (key < root.key)
+        if (key < root.data)
             root.left = deleteRec(root.left, key);
-        else if (key > root.key)
+        else if (key > root.data)
             root.right = deleteRec(root.right, key);
  
         // if key is same as root's key, then This is the node
@@ -53,10 +41,10 @@ public class DeleteNodeBST {
  
             // node with two children: Get the inorder successor (smallest
             // in the right subtree)
-            root.key = minValue(root.right);
+            root.data = minValue(root.right);
  
             // Delete the inorder successor
-            root.right = deleteRec(root.right, root.key);
+            root.right = deleteRec(root.right, root.data);
         }
  
         return root;
@@ -64,10 +52,10 @@ public class DeleteNodeBST {
  
     int minValue(Node root)
     {
-        int minv = root.key;
+        int minv = root.data;
         while (root.left != null)
         {
-            minv = root.left.key;
+            minv = root.left.data;
             root = root.left;
         }
         return minv;
@@ -91,9 +79,9 @@ public class DeleteNodeBST {
         }
  
         /* Otherwise, recur down the tree */
-        if (key < root.key)
+        if (key < root.data)
             root.left = insertRec(root.left, key);
-        else if (key > root.key)
+        else if (key > root.data)
             root.right = insertRec(root.right, key);
  
         /* return the (unchanged) node pointer */
@@ -112,7 +100,7 @@ public class DeleteNodeBST {
         if (root != null)
         {
             inorderRec(root.left);
-            System.out.print(root.key + " ");
+            System.out.print(root.data + " ");
             inorderRec(root.right);
         }
     }
