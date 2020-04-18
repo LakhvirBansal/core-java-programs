@@ -1,34 +1,27 @@
-package Graph;
+package graph;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class GraphBFS {
 
-	static class Graph {
-		int v;
-		LinkedList<Integer> adjListArray[];
+	public static void bfs(Graph graph, int i) {
 
-		Graph(int val) {
-			v = val;
-			adjListArray = new LinkedList[v];
+		List<Integer> visited = new ArrayList<Integer>();
 
-			for (int i = 0; i < v; i++) {
-				adjListArray[i] = new LinkedList<Integer>();
+		Queue<Integer> queue = new LinkedList<Integer>();
+		queue.add(i);
+
+		while(! queue.isEmpty()) {
+			int val = queue.poll();
+			if(!visited.contains(val)) {
+				System.out.print(val+ " ");
+				queue.addAll(graph.adjListArray[val]);
+				visited.add(val);
 			}
 		}
-
-		public void bfs(Graph graph, int i) {
-
-			List<Integer> visited = new ArrayList<Integer>();
-			visited.add(i);
-
-			LinkedList<Integer> queue = new LinkedList<Integer>();
-			queue.add(i);
-
-		}
-
 	}
 
 	static void addEdge(Graph graph, int src, int dest) {
@@ -46,10 +39,9 @@ public class GraphBFS {
 		addEdge(graph, 0, 1);
 		addEdge(graph, 0, 2);
 		addEdge(graph, 1, 2);
-		addEdge(graph, 2, 0);
 		addEdge(graph, 2, 3);
-		addEdge(graph, 3, 3);
+		addEdge(graph, 3, 1);
 
-		graph.bfs(graph, 2);
+		bfs(graph, 2);
 	}
 }

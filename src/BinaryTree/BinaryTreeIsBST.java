@@ -28,7 +28,7 @@ public class BinaryTreeIsBST {
         tree.root.left = new Node(3);
         tree.root.right = new Node(5);
         tree.root.left.left = new Node(2);
-        //tree.root.left.right = new Node(6);
+        tree.root.right.right = new Node(6);
  
         if (tree.isBST())
             System.out.println("IS BST");

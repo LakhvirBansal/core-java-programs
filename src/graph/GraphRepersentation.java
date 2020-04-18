@@ -1,22 +1,7 @@
-package Graph;
-
-import java.util.LinkedList;
+package graph;
 
 public class GraphRepersentation {
 
-	static class Graph {
-		int v;
-		LinkedList<Integer> adjListArray[];
-
-		Graph(int val) {
-			v = val;
-			adjListArray = new LinkedList[v];
-
-			for (int i = 0; i < v; i++) {
-				adjListArray[i] = new LinkedList<Integer>();
-			}
-		}
-	}
 
 	static void addEdge(Graph graph, int src, int dest) {
 		// Add an edge from src to dest.
@@ -31,8 +16,8 @@ public class GraphRepersentation {
 		for (int v = 0; v < graph.v; v++) {
 			System.out.println("Adjacency list of vertex " + v);
 			System.out.print("head");
-			for (Integer pCrawl : graph.adjListArray[v]) {
-				System.out.print(" -> " + pCrawl);
+			for (Integer val : graph.adjListArray[v]) {
+				System.out.print(" -> " + val);
 			}
 			System.out.println("\n");
 		}
