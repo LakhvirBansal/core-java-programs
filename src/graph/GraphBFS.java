@@ -41,6 +41,7 @@ public class GraphBFS {
 		addEdge(graph, 1, 2);
 		addEdge(graph, 2, 3);
 		addEdge(graph, 3, 1);
+		addEdge(graph, 1, 4);
 
 		bfs(graph, 2);
 	}

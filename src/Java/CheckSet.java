@@ -34,6 +34,7 @@ public class CheckSet {
 	private static void methodOne(List list) {
 		list.add(10);
 		list.add(20);
+		
 
 	}
 

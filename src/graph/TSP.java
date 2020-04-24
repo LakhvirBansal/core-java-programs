@@ -1,19 +1,30 @@
 package graph;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-/*
- * this problem finds the smallest path to reach to the top
- * for ladder we are using positive values
- * for snakes we are using -ve values
+/**
+ * TSP problem is Graph problem where we need to find the shortest path in the hamitolian tour
  * 
- * suppose there is a ladder at 2 and it reaches to 15 then jump = 15-2  = 13
- * suppose there is a snake at 17 and it reaches to 4 then jump = 17 - 4  = -13
+ * Hamitolian tour - a tour starts from any city s goes through all the n-1 cities exactly once and return to start city s.
+ * 
+ * in this problem we need to use bit-masking for 4 vertices we use 4 bits (0000) and all are visited then its value is 1111
+ * 
+ * 			0000 in starting all the bits are      0000
+			DCBA if A is visited then its value is 0001
+				 if B is visited then its value is 0011
+				 if C is visited then its value is 0111
+				 if D is visited then its value is 1111
+ * 				
+ * 
+ * @author Lakhvir Bansal
+ *
  */
 public class TSP {
 
-	static int[][] dist ={{0,20,42,25},{20,0,30,34},{42,30,0,10},{25,34,10,0}};
+	static int[][] dist ={
+							{0,20,42,25},
+							{20,0,30,34},
+							{42,30,0,10},
+							{25,34,10,0}
+						};
     // 1<<4 = 10000 (1 then 4 times 0) then its decimal value
 	static int VISITED_ALL = (1<<4) - 1;
 	static int n = 4;
