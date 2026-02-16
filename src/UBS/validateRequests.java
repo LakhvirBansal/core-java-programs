@@ -15,7 +15,7 @@ public class validateRequests {
         // Use a stream to transform the blacklisted IP strings into a list of compiled regex patterns.
         // The wildcard '*' is replaced with '.*' for proper regex matching.
         List<Pattern> blacklistPatterns = blacklisted_ips.stream()
-                .map(s -> s.replace("*", ".*"))
+                .map(s -> s.replace(".","\\.").replace("*", ".*"))
                 .map(Pattern::compile)
                 .collect(Collectors.toList());
 

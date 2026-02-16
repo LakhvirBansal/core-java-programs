@@ -174,7 +174,8 @@ public class CloudStorageImpl {
 
     // Add inside CloudStorageImpl
     private boolean userExists(String userId) {
-        return ADMIN.equals(userId) || capacity.containsKey(userId);
+        return ADMIN.equals(userId) ||
+                capacity.containsKey(userId);
     }
 
 }
